@@ -3,22 +3,19 @@ import { motion } from 'framer-motion';
 
 const articles = [
   {
+    category: 'Salon',
+    title: "Establishments such as Baan Thai and Men's Planet now offer enhanced services.",
     date: 'July 29, 2025',
-    title: 'Establishments such as Baan Thai and Men\'s Planet now offer enhanced services.',
-    img: '/images/img_28.jpg',
-    alt: 'A modern editorial image for a blog post about enhanced grooming services',
   },
   {
+    category: 'Salon',
+    title: "Baan Thai and Men's Planet elevate your experience",
     date: 'July 28, 2025',
-    title: 'Baan Thai and Men\'s Planet elevate your experience',
-    img: '/images/img_13.jpg',
-    alt: 'An artistic photograph of premium skincare products and barbershop essentials',
   },
   {
-    date: 'July 27, 2025',
+    category: 'Salon',
     title: 'Discover upgraded services at your favorite spots',
-    img: '/images/img_21.jpg',
-    alt: 'An editorial shot of a gentleman relaxing in a vintage leather barber chair',
+    date: 'July 27, 2025',
   },
 ];
 
@@ -36,59 +33,67 @@ const News: React.FC = () => {
     <section className="py-section-gap bg-paper-bg">
       <div className="max-w-container-max mx-auto px-margin-desktop">
         <motion.div
-          className="flex items-center justify-between mb-16"
+          className="mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.2 } },
-          }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
         >
-          <div>
-            <motion.span
-              className="px-3 py-1 border border-brass-gold rounded-full text-eyebrow font-eyebrow text-brass-gold uppercase mb-4 inline-block"
-              variants={fadeUpVariants}
-            >
-              News &amp; Insights
-            </motion.span>
-            <motion.h2
-              className="text-headline-xl font-headline-xl uppercase"
-              variants={fadeUpVariants}
-            >
-              Get every updates from here
-            </motion.h2>
-          </div>
+          <motion.span
+            className="inline-flex items-center gap-2 px-3 py-1.5 border border-brass-gold text-eyebrow font-eyebrow text-ink-black uppercase tracking-widest mb-6"
+            variants={fadeUpVariants}
+          >
+            <span className="material-symbols-outlined text-brass-gold text-[12px]">content_cut</span>
+            News &amp; Insights
+          </motion.span>
+          <motion.h2 className="text-headline-xl font-headline-xl uppercase" variants={fadeUpVariants}>
+            Get every updates from here
+          </motion.h2>
         </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-gutter"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.15 } },
-          }}
-        >
-          {articles.map((article, idx) => (
-            <motion.article key={idx} className="group" variants={fadeUpVariants}>
-              <div className="aspect-video bg-ink-black overflow-hidden mb-6">
-                <img
-                  className="w-full h-full object-cover grayscale group-hover:scale-105 transition-all duration-700 group-hover:grayscale-0"
-                  alt={article.alt}
-                  src={article.img}
-                />
-              </div>
-              <span className="text-eyebrow font-eyebrow text-brass-gold uppercase">
-                Salon | {article.date}
-              </span>
-              <h4 className="text-headline-lg font-headline-lg uppercase mt-4 group-hover:text-brass-gold transition-colors">
-                {article.title}
-              </h4>
-            </motion.article>
-          ))}
-        </motion.div>
+        <div className="grid grid-cols-12 gap-gutter items-center">
+          {/* Featured image */}
+          <motion.div
+            className="col-span-12 lg:col-span-5"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            variants={fadeUpVariants}
+          >
+            <div className="aspect-[4/3] overflow-hidden group">
+              <img
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt="A stylist works on a client's cropped platinum haircut in a bright, plant-filled modern salon."
+                src="/images/ref/news-feature.jpg"
+              />
+            </div>
+          </motion.div>
+
+          {/* Article list */}
+          <motion.div
+            className="col-span-12 lg:col-span-6 lg:col-start-7"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
+          >
+            {articles.map((article) => (
+              <motion.article
+                key={article.title}
+                className="group py-8 border-b border-muted-brass first:pt-0"
+                variants={fadeUpVariants}
+              >
+                <span className="text-eyebrow font-eyebrow text-brass-gold uppercase tracking-widest">
+                  {article.category}
+                </span>
+                <h4 className="text-headline-lg font-headline-lg uppercase mt-3 mb-3 group-hover:text-brass-gold transition-colors cursor-pointer">
+                  {article.title}
+                </h4>
+                <p className="text-body-md font-body-md text-on-surface-variant">{article.date}</p>
+              </motion.article>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

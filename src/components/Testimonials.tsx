@@ -10,82 +10,125 @@ const fadeUpVariants = {
   },
 };
 
+const avatars = [
+  '/images/ref/testi-av1.png',
+  '/images/ref/testi-av2.png',
+  '/images/ref/testi-av3.png',
+];
+
 const Testimonials: React.FC = () => {
   return (
     <section className="py-section-gap bg-paper-bg overflow-hidden">
-      <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-12 gap-gutter items-center">
+      <div className="max-w-container-max mx-auto px-margin-desktop">
+        {/* Heading */}
         <motion.div
-          className="col-span-12 lg:col-span-6 relative"
+          className="relative mb-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.2 } },
-          }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
         >
-          <motion.div className="aspect-[1/1] overflow-hidden rounded-2xl" variants={fadeUpVariants}>
-            <img
-              className="w-full h-full object-cover"
-              alt="A candid, artistic black and white image of a happy client checking his new haircut in the mirror. The focus is on the client's genuine expression of satisfaction, while the background shows a blurred, high-end salon atmosphere with warm, directional lighting. The overall mood is sophisticated and authentic."
-              src="/images/img_21.jpg"
-            />
-          </motion.div>
-          <motion.div
-            className="absolute -top-6 -right-6 w-32 h-32 bg-brass-gold rounded-full flex items-center justify-center text-ink-black"
+          <motion.span
+            className="inline-flex items-center gap-2 px-3 py-1.5 border border-brass-gold text-eyebrow font-eyebrow text-ink-black uppercase tracking-widest mb-6"
             variants={fadeUpVariants}
           >
-            <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-              format_quote
-            </span>
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          className="col-span-12 lg:col-span-5 lg:col-start-8 relative mt-16 lg:mt-0"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.15 } },
-          }}
-        >
-          <span className="text-[200px] absolute -top-40 -left-10 font-black text-muted-brass opacity-20 pointer-events-none">
-            “
-          </span>
-          <motion.div className="flex items-center gap-2 mb-6" variants={fadeUpVariants}>
-            <span className="px-3 py-1 border border-brass-gold rounded-full text-eyebrow font-eyebrow text-brass-gold uppercase">
-              Testimonials
-            </span>
-          </motion.div>
-          <motion.h2 className="text-headline-xl font-headline-xl uppercase mb-10" variants={fadeUpVariants}>
+            <span className="material-symbols-outlined text-brass-gold text-[12px]">content_cut</span>
+            Testimonials
+          </motion.span>
+          <motion.h2
+            className="text-headline-xl font-headline-xl uppercase"
+            variants={fadeUpVariants}
+          >
             What Clients Say
           </motion.h2>
-          <motion.div className="flex gap-1 mb-6" variants={fadeUpVariants}>
-            {[1, 2, 3, 4, 5].map((i) => (
-              <span key={i} className="material-symbols-outlined text-brass-gold" style={{ fontVariationSettings: "'FILL' 1" }}>
-                star
-              </span>
-            ))}
-          </motion.div>
-          <motion.p className="text-body-lg italic font-body-lg mb-10 text-ink-black leading-relaxed" variants={fadeUpVariants}>
-            "Whether you're here for a classic trim, a modern fade, or a relaxing hot towel shave, our skilled barbers are dedicated to making you look and feel your best. Sit back, relax, and enjoy the experience — because every gentleman deserves to look sharp."
-          </motion.p>
-          <motion.div className="flex items-center gap-4" variants={fadeUpVariants}>
-            <div className="w-16 h-16 rounded-full bg-ink-black flex items-center justify-center text-paper-bg overflow-hidden border-2 border-brass-gold">
+        </motion.div>
+
+        <div className="grid grid-cols-12 gap-gutter items-stretch relative">
+          {/* Left: large barber image */}
+          <motion.div
+            className="col-span-12 lg:col-span-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            variants={fadeUpVariants}
+          >
+            <div className="w-full h-full min-h-[420px] overflow-hidden">
               <img
                 className="w-full h-full object-cover"
-                alt="A professional headshot portrait of a man with styled hair and a neatly trimmed beard, looking directly at the camera with a confident expression. The lighting is soft and flattering, emphasizing grooming detail against a dark, out-of-focus background."
-                src="/images/img_42.jpg"
+                alt="A young client admires his fresh cut and styled hair as the barber finishes with a blow-dryer in a brick-walled heritage barbershop."
+                src="/images/ref/testi-main.png"
               />
             </div>
-            <div>
-              <p className="font-bold uppercase tracking-widest text-ink-black">Alonso D. Dowson</p>
-              <p className="text-eyebrow font-eyebrow text-brass-gold">FOUNDER GOOGLE</p>
-            </div>
           </motion.div>
-        </motion.div>
+
+          {/* Right: quote card */}
+          <motion.div
+            className="col-span-12 lg:col-span-6 relative bg-white/60 p-10 lg:p-14 flex flex-col justify-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
+          >
+            {/* Razor image overlapping top-right */}
+            <img
+              src="/images/ref/testi-razor.png"
+              alt="An open straight razor with a wooden handle and polished steel blade."
+              className="hidden lg:block absolute -top-24 right-6 w-24 rotate-[35deg] pointer-events-none select-none drop-shadow-xl"
+            />
+
+            {/* Avatars + name */}
+            <motion.div className="flex items-center gap-5 mb-10" variants={fadeUpVariants}>
+              <div className="flex -space-x-3">
+                {avatars.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt="Satisfied Salono client"
+                    className="w-11 h-11 rounded-md object-cover border-2 border-white"
+                  />
+                ))}
+              </div>
+              <div>
+                <p className="font-bold uppercase tracking-wide text-ink-black text-sm">
+                  Alonso D. Dowson
+                </p>
+                <p className="text-eyebrow font-eyebrow text-brass-gold uppercase">
+                  Founder Google
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Big quote watermark */}
+            <img
+              src="/images/ref/testi-quote.png"
+              alt=""
+              aria-hidden="true"
+              className="absolute right-10 top-1/3 w-40 opacity-[0.06] pointer-events-none select-none"
+            />
+
+            <motion.div className="flex gap-1 mb-6" variants={fadeUpVariants}>
+              {[1, 2, 3, 4, 5].map((i) => (
+                <span
+                  key={i}
+                  className="material-symbols-outlined text-brass-gold text-[20px]"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  star
+                </span>
+              ))}
+            </motion.div>
+
+            <motion.p
+              className="text-body-lg font-body-lg text-on-surface-variant leading-relaxed relative z-10"
+              variants={fadeUpVariants}
+            >
+              "Whether you're here for a classic trim, a modern fade, or a relaxing hot
+              towel shave, our skilled barbers are dedicated to making you look and feel
+              your best. Sit back, relax, and enjoy the experience — because every
+              gentleman deserves to look sharp."
+            </motion.p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

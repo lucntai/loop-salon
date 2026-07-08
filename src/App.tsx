@@ -7,7 +7,6 @@ import Testimonials from './components/Testimonials';
 import FunFacts from './components/FunFacts';
 import Booking from './components/Booking';
 import Team from './components/Team';
-import Gallery from './components/Gallery';
 import News from './components/News';
 import Footer from './components/Footer';
 
@@ -30,7 +29,6 @@ function App() {
       <FunFacts />
       <Booking />
       <Team />
-      <Gallery />
       <News />
       <Footer />
     </div>

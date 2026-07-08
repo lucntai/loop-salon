@@ -10,95 +10,104 @@ const fadeUpVariants = {
   },
 };
 
+const StatOverlay: React.FC<{ label: string }> = ({ label }) => (
+  <div className="absolute inset-0 p-8 flex flex-col justify-start">
+    <h3 className="text-[56px] leading-none font-display-lg text-white">1200+</h3>
+    <p className="text-body-md font-body-md text-white/80 mt-1">{label}</p>
+  </div>
+);
+
 const FunFacts: React.FC = () => {
   return (
-    <section className="py-section-gap bg-ink-black text-paper-bg">
+    <section className="py-section-gap bg-paper-bg text-ink-black overflow-hidden">
       <div className="max-w-container-max mx-auto px-margin-desktop">
         <motion.div
-          className="flex items-center justify-between mb-16"
+          className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.2 } },
-          }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
         >
-          <div className="max-w-2xl">
-            <motion.span
-              className="px-3 py-1 border border-brass-gold rounded-full text-eyebrow font-eyebrow text-brass-gold uppercase mb-4 inline-block"
-              variants={fadeUpVariants}
-            >
-              Fun Facts
-            </motion.span>
-            <motion.h2
-              className="text-headline-xl font-headline-xl uppercase"
-              variants={fadeUpVariants}
-            >
-              Being better informed means making a good and better decisions
-            </motion.h2>
-          </div>
+          <motion.span
+            className="inline-flex items-center gap-2 px-3 py-1.5 border border-brass-gold text-eyebrow font-eyebrow text-ink-black uppercase tracking-widest mb-6"
+            variants={fadeUpVariants}
+          >
+            <span className="material-symbols-outlined text-brass-gold text-[12px]">content_cut</span>
+            Fun Facts
+          </motion.span>
+          <motion.h2
+            className="text-headline-xl font-headline-xl uppercase max-w-4xl mx-auto leading-tight"
+            variants={fadeUpVariants}
+          >
+            Being better informed means making a good and better decisions
+          </motion.h2>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-gutter"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.15 } },
-          }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
         >
-          <motion.div
-            className="bg-paper-bg/5 p-12 border border-paper-bg/10 flex flex-col justify-between aspect-square hover:bg-brass-gold hover:text-ink-black transition-all duration-500 group"
-            variants={fadeUpVariants}
-          >
-            <h2 className="text-[80px] font-display-lg leading-none">1200+</h2>
-            <div>
-              <p className="text-label-sm font-label-sm uppercase tracking-widest mb-2">
-                Serving daily haircut
-              </p>
-              <p className="text-eyebrow font-eyebrow opacity-60 group-hover:opacity-100 uppercase">
-                CLEAN, RELAXING, AND WELCOMING ENVIRONMENT
-              </p>
+          {/* Top-left: image stat card */}
+          <motion.div className="relative aspect-[16/9] overflow-hidden" variants={fadeUpVariants}>
+            <img
+              className="w-full h-full object-cover"
+              alt="A close-up of a barber trimming a client's hairline with clippers."
+              src="/images/ref/fact-1.png"
+            />
+            <div className="absolute inset-0 bg-black/40" />
+            <StatOverlay label="Serving daily haircut" />
+          </motion.div>
+
+          {/* Top-right: white stat card with soap image */}
+          <motion.div className="relative aspect-[16/9] overflow-hidden bg-white" variants={fadeUpVariants}>
+            <img
+              className="absolute right-0 top-0 h-full w-1/2 object-contain object-right"
+              alt="A stack of folded warm towels in a wooden bowl."
+              src="/images/ref/fact-soap.png"
+            />
+            <div className="absolute inset-0 p-8 flex flex-col justify-start">
+              <h3 className="text-[56px] leading-none font-display-lg text-ink-black">1200+</h3>
+              <p className="text-body-md font-body-md text-on-surface-variant mt-1">Serving daily haircut</p>
             </div>
           </motion.div>
 
-          <motion.div
-            className="md:col-span-2 overflow-hidden aspect-[2/1] relative"
-            variants={fadeUpVariants}
-          >
-            <img
-              className="w-full h-full object-cover"
-              alt="A wide cinematic interior shot of the luxury barbershop during a busy afternoon, with barbers at work and soft golden light filtering through. The composition highlights the premium service atmosphere and elegant design details of the heritage-inspired space."
-              src="/images/img_28.jpg"
-            />
+          {/* Bottom-left: brass card */}
+          <motion.div className="relative aspect-[16/9] overflow-hidden bg-brass-gold text-ink-black p-8 flex flex-col justify-between" variants={fadeUpVariants}>
+            <p className="text-headline-lg font-headline-lg uppercase max-w-[16rem] leading-tight">
+              Clean, Relaxing, and Welcoming Environment
+            </p>
+            <div className="flex items-end justify-between">
+              <div>
+                <h3 className="text-[56px] leading-none font-display-lg">1200+</h3>
+                <p className="text-body-md font-body-md opacity-80 mt-1">Serving daily haircut</p>
+              </div>
+              <img
+                src="/images/ref/fact-logo.png"
+                alt="Gentlemen's barber shop emblem"
+                className="w-28 h-28 object-contain"
+              />
+            </div>
           </motion.div>
 
-          <motion.div
-            className="md:col-span-2 overflow-hidden aspect-[2/1] relative"
-            variants={fadeUpVariants}
-          >
+          {/* Bottom-right: rewards image card with badges */}
+          <motion.div className="relative aspect-[16/9] overflow-hidden" variants={fadeUpVariants}>
             <img
               className="w-full h-full object-cover"
-              alt="A close-up artistic photograph focusing on the intricate details of a master barber's tools and a perfectly executed fade haircut. The lighting is focused and warm, showcasing the high-level craftsmanship and modern style of the salon's offerings."
-              src="/images/img_13.jpg"
+              alt="An elderly master barber grooms a heavily tattooed client's beard in an atmospheric vintage shop."
+              src="/images/ref/fact-2.png"
             />
-          </motion.div>
-
-          <motion.div
-            className="bg-brass-gold p-12 flex flex-col justify-between aspect-square text-ink-black"
-            variants={fadeUpVariants}
-          >
-            <h2 className="text-[80px] font-display-lg leading-none">1200+</h2>
-            <div>
-              <p className="text-label-sm font-label-sm uppercase tracking-widest mb-2">
-                Meet with rewards
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40" />
+            <div className="absolute inset-0 p-8 flex flex-col justify-between">
+              <p className="text-headline-lg font-headline-lg uppercase text-white">
+                Meet with Rewards
               </p>
-              <p className="text-eyebrow font-eyebrow opacity-70 uppercase">
-                Join our premium loyalty program for exclusive grooming benefits.
-              </p>
+              <div className="flex items-center gap-4">
+                <img src="/images/ref/award-1.png" alt="Award badge" className="h-10 w-auto object-contain" />
+                <img src="/images/ref/award-2.png" alt="Award badge" className="h-10 w-auto object-contain" />
+              </div>
             </div>
           </motion.div>
         </motion.div>

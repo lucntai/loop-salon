@@ -10,114 +10,131 @@ const fadeUpVariants = {
   },
 };
 
+const Eyebrow: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <span className="inline-flex items-center gap-2 px-3 py-1.5 border border-brass-gold text-eyebrow font-eyebrow text-ink-black uppercase tracking-widest">
+    <span className="material-symbols-outlined text-brass-gold text-[12px]">content_cut</span>
+    {children}
+  </span>
+);
+
+const marqueeLogos = [
+  '/images/ref/brand-1.png',
+  '/images/ref/brand-2.png',
+  '/images/ref/brand-3.png',
+  '/images/ref/brand-4.png',
+  '/images/ref/brand-5.png',
+];
+
 const About: React.FC = () => {
+  const bullets = [
+    'Skilled & certified professionals',
+    'Clean, relaxing, and welcoming environment',
+    'Personalized grooming consultations',
+  ];
+
   return (
     <section className="py-section-gap bg-paper-bg overflow-hidden">
-      <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-12 gap-gutter items-center">
+      <div className="max-w-container-max mx-auto px-margin-desktop">
+        {/* Heading */}
         <motion.div
-          className="col-span-12 lg:col-span-6 relative"
+          className="mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.2 } },
-          }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
         >
-          <motion.div
-            className="w-full aspect-[4/5] bg-ink-black overflow-hidden relative"
+          <motion.div className="mb-6" variants={fadeUpVariants}>
+            <Eyebrow>About Salon</Eyebrow>
+          </motion.div>
+          <motion.h2
+            className="text-headline-xl font-headline-xl uppercase max-w-2xl leading-tight"
             variants={fadeUpVariants}
           >
-            <img
-              className="w-full h-full object-cover opacity-90 transition-transform duration-1000 hover:scale-105"
-              alt="A wide-angle interior shot of a luxury barbershop featuring vintage leather chairs, dark wood cabinetry, and polished brass fixtures. The scene is bathed in natural light streaming through large windows, creating a welcoming and clean environment that reflects a modern take on heritage grooming."
-              src="/images/img_28.jpg"
-            />
-          </motion.div>
-          <motion.div
-            className="absolute -bottom-12 -right-12 w-64 h-48 hidden lg:block bg-ink-black p-4"
-            variants={fadeUpVariants}
-          >
-            <img
-              className="w-full h-full object-cover"
-              alt="A detailed shot of a barber's workstation with organized shaving brushes, straight razors, and luxury grooming products on a marble countertop. The composition is clean and minimalist, reinforcing the theme of skilled professionalism and a relaxing environment."
-              src="/images/img_13.jpg"
-            />
-          </motion.div>
-        </motion.div>
-        
-        <motion.div
-          className="col-span-12 lg:col-span-5 lg:col-start-8 mt-16 lg:mt-0"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.15 } },
-          }}
-        >
-          <motion.div className="flex items-center gap-2 mb-6" variants={fadeUpVariants}>
-            <span className="px-3 py-1 border border-brass-gold rounded-full text-eyebrow font-eyebrow text-brass-gold uppercase flex items-center gap-2">
-              <span className="material-symbols-outlined text-[10px]">content_cut</span> About Salon
-            </span>
-          </motion.div>
-          <motion.h2 className="text-headline-xl font-headline-xl uppercase mb-8" variants={fadeUpVariants}>
-            Your Trusted Salon &amp; Barber Shop.
+            Your Trusted Salon &amp; Barber shop.
           </motion.h2>
-          <motion.h5 className="text-label-sm font-label-sm text-brass-gold uppercase tracking-widest mb-4" variants={fadeUpVariants}>
-            Why Choose Us?
-          </motion.h5>
-          <motion.p className="text-body-md font-body-md mb-8 text-on-surface-variant" variants={fadeUpVariants}>
-            From classic cuts to modern styles, we craft looks that suit your personality and lifestyle.
-          </motion.p>
-          <motion.ul className="space-y-4 mb-12" variants={fadeUpVariants}>
-            <li className="flex items-center gap-4 group">
-              <div className="w-10 h-10 rounded-full border border-brass-gold flex items-center justify-center text-brass-gold group-hover:bg-brass-gold group-hover:text-ink-black transition-all">
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
-              </div>
-              <span className="text-body-md font-body-md font-semibold">Skilled &amp; certified professionals</span>
-            </li>
-            <li className="flex items-center gap-4 group">
-              <div className="w-10 h-10 rounded-full border border-brass-gold flex items-center justify-center text-brass-gold group-hover:bg-brass-gold group-hover:text-ink-black transition-all">
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>spa</span>
-              </div>
-              <span className="text-body-md font-body-md font-semibold">Clean, relaxing, and welcoming environment</span>
-            </li>
-            <li className="flex items-center gap-4 group">
-              <div className="w-10 h-10 rounded-full border border-brass-gold flex items-center justify-center text-brass-gold group-hover:bg-brass-gold group-hover:text-ink-black transition-all">
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>person_search</span>
-              </div>
-              <span className="text-body-md font-body-md font-semibold">Personalized grooming consultations</span>
-            </li>
-          </motion.ul>
-          <motion.a
-            className="inline-block border-b-2 border-ink-black pb-1 font-label-sm text-label-sm uppercase tracking-widest hover:text-brass-gold hover:border-brass-gold transition-all duration-300"
-            href="#"
+        </motion.div>
+
+        {/* Two-column: large image left, small image + white card right */}
+        <div className="grid grid-cols-12 gap-gutter items-start">
+          <motion.div
+            className="col-span-12 lg:col-span-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
             variants={fadeUpVariants}
           >
-            Our Expertise
-          </motion.a>
-        </motion.div>
+            <div className="w-full aspect-[4/5] overflow-hidden">
+              <img
+                className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                alt="A master barber gives a client a precise straight-razor beard shave in a warmly lit heritage barbershop, conveying skilled, hands-on craftsmanship."
+                src="/images/ref/about-main.png"
+              />
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="col-span-12 lg:col-span-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
+          >
+            <motion.div
+              className="w-full aspect-[16/9] overflow-hidden mb-8"
+              variants={fadeUpVariants}
+            >
+              <img
+                className="w-full h-full object-cover"
+                alt="A client seated in a barber chair draped with a cape while a stylist works, viewed across the salon's dark cabinetry and mirrors."
+                src="/images/ref/about-small.png"
+              />
+            </motion.div>
+
+            <motion.div className="bg-white p-10 lg:p-12" variants={fadeUpVariants}>
+              <h3 className="text-headline-lg font-headline-lg uppercase mb-4">
+                Why Choose Us?
+              </h3>
+              <p className="text-body-md font-body-md text-on-surface-variant mb-8 max-w-md">
+                From classic cuts to modern styles, we craft looks that suit your
+                personality and lifestyle.
+              </p>
+              <ul className="space-y-5 mb-10">
+                {bullets.map((b) => (
+                  <li key={b} className="flex items-center gap-4">
+                    <span className="w-8 h-8 shrink-0 rounded-full bg-brass-gold flex items-center justify-center text-white">
+                      <span
+                        className="material-symbols-outlined text-[18px]"
+                        style={{ fontVariationSettings: "'wght' 500" }}
+                      >
+                        check
+                      </span>
+                    </span>
+                    <span className="text-body-md font-body-md text-ink-black">
+                      {b}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                className="block w-full text-center border border-brass-gold text-ink-black font-label-sm text-label-sm px-8 py-4 uppercase tracking-widest hover:bg-brass-gold hover:text-white transition-colors duration-300"
+                href="#"
+              >
+                Our Expertise
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Logo Marquee */}
-      <div className="mt-section-gap overflow-hidden border-y border-muted-brass py-8">
-        <div className="flex animate-marquee whitespace-nowrap gap-24">
-          {[1, 2, 3, 4, 5].map((_, i) => (
+      <div className="mt-section-gap overflow-hidden py-8">
+        <div className="flex animate-marquee whitespace-nowrap gap-24 items-center">
+          {[...marqueeLogos, ...marqueeLogos, ...marqueeLogos].map((src, i) => (
             <img
               key={i}
-              alt="Logo Marquee"
-              className="h-12 opacity-50 hover:opacity-100 transition-opacity"
-              src="/images/img_23.jpg"
-            />
-          ))}
-          {/* Duplicate for seamless loop */}
-          {[1, 2, 3, 4, 5].map((_, i) => (
-            <img
-              key={`dup-${i}`}
-              alt="Logo Marquee"
-              className="h-12 opacity-50 hover:opacity-100 transition-opacity"
-              src="/images/img_23.jpg"
+              alt="Partner brand logo"
+              className="h-8 w-auto opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all shrink-0"
+              src={src}
             />
           ))}
         </div>
