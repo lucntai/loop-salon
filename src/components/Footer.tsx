@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
         {/* Giant brass wordmark */}
         <div className="border-t border-white/10 pt-10">
           <img
-            src="/images/ref/footer-wordmark.png"
+            src="/images/footer-wordmark.png"
             alt="SALONO"
             className="w-full object-contain select-none pointer-events-none"
           />

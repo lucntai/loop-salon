@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const services = [
-  { title: 'Blade & Brush', icon: '/images/ref/svc-1.png', desc: 'Styles we craft looks that suit your personality and lifestyle.' },
-  { title: 'The Gents’ Den', icon: '/images/ref/svc-2.png', desc: 'We design styles tailored to your personality and lifestyle.' },
-  { title: 'Fade Theory', icon: '/images/ref/svc-3.png', desc: 'Crafting looks that reflect who you are and how you live.' },
-  { title: 'Snip Society', icon: '/images/ref/svc-4.png', desc: 'Personalized styles created to match your unique lifestyle.' },
-  { title: 'Crafted Cuts', icon: '/images/ref/svc-5.png', desc: 'Our styles complement your personality and everyday life.' },
-  { title: 'The Razor Room', icon: '/images/ref/svc-6.png', desc: 'Tailoring looks that perfectly fit your individuality.' },
+  { title: 'Blade & Brush', icon: '/images/svc-1.png', desc: 'Styles we craft looks that suit your personality and lifestyle.' },
+  { title: 'The Gents’ Den', icon: '/images/svc-2.png', desc: 'We design styles tailored to your personality and lifestyle.' },
+  { title: 'Fade Theory', icon: '/images/svc-3.png', desc: 'Crafting looks that reflect who you are and how you live.' },
+  { title: 'Snip Society', icon: '/images/svc-4.png', desc: 'Personalized styles created to match your unique lifestyle.' },
+  { title: 'Crafted Cuts', icon: '/images/svc-5.png', desc: 'Our styles complement your personality and everyday life.' },
+  { title: 'The Razor Room', icon: '/images/svc-6.png', desc: 'Tailoring looks that perfectly fit your individuality.' },
 ];
 
 const fadeUpVariants = {

@@ -18,11 +18,11 @@ const Eyebrow: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 );
 
 const marqueeLogos = [
-  '/images/ref/brand-1.png',
-  '/images/ref/brand-2.png',
-  '/images/ref/brand-3.png',
-  '/images/ref/brand-4.png',
-  '/images/ref/brand-5.png',
+  '/images/brand-1.png',
+  '/images/brand-2.png',
+  '/images/brand-3.png',
+  '/images/brand-4.png',
+  '/images/brand-5.png',
 ];
 
 const About: React.FC = () => {
@@ -67,7 +67,7 @@ const About: React.FC = () => {
               <img
                 className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                 alt="A master barber gives a client a precise straight-razor beard shave in a warmly lit heritage barbershop, conveying skilled, hands-on craftsmanship."
-                src="/images/ref/about-main.png"
+                src="/images/about-main.png"
               />
             </div>
           </motion.div>
@@ -86,7 +86,7 @@ const About: React.FC = () => {
               <img
                 className="w-full h-full object-cover"
                 alt="A client seated in a barber chair draped with a cape while a stylist works, viewed across the salon's dark cabinetry and mirrors."
-                src="/images/ref/about-small.png"
+                src="/images/about-small.png"
               />
             </motion.div>
 

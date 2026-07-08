@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const teamMembers = [
-  { name: 'Emilio J. Harper', role: 'Barber', img: '/images/ref/team-1.png' },
-  { name: 'Ricardo P. Wins', role: 'Hairstylist', img: '/images/ref/team-2.png' },
-  { name: 'Santiago G. Dray', role: 'Colorist', img: '/images/ref/team-3.png' },
-  { name: 'Marcello D. Vance', role: 'Stylist', img: '/images/ref/team-4.png' },
+  { name: 'Emilio J. Harper', role: 'Barber', img: '/images/team-1.png' },
+  { name: 'Ricardo P. Wins', role: 'Hairstylist', img: '/images/team-2.png' },
+  { name: 'Santiago G. Dray', role: 'Colorist', img: '/images/team-3.png' },
+  { name: 'Marcello D. Vance', role: 'Stylist', img: '/images/team-4.png' },
 ];
 
 const fadeUpVariants = {

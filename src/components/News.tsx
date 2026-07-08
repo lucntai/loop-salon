@@ -64,7 +64,7 @@ const News: React.FC = () => {
               <img
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 alt="A stylist works on a client's cropped platinum haircut in a bright, plant-filled modern salon."
-                src="/images/ref/news-feature.jpg"
+                src="/images/news-feature.jpg"
               />
             </div>
           </motion.div>

@@ -55,7 +55,7 @@ const FunFacts: React.FC = () => {
             <img
               className="w-full h-full object-cover"
               alt="A close-up of a barber trimming a client's hairline with clippers."
-              src="/images/ref/fact-1.png"
+              src="/images/fact-1.png"
             />
             <div className="absolute inset-0 bg-black/40" />
             <StatOverlay label="Serving daily haircut" />
@@ -66,7 +66,7 @@ const FunFacts: React.FC = () => {
             <img
               className="absolute right-0 top-0 h-full w-1/2 object-contain object-right"
               alt="A stack of folded warm towels in a wooden bowl."
-              src="/images/ref/fact-soap.png"
+              src="/images/fact-soap.png"
             />
             <div className="absolute inset-0 p-8 flex flex-col justify-start">
               <h3 className="text-[56px] leading-none font-display-lg text-ink-black">1200+</h3>
@@ -85,7 +85,7 @@ const FunFacts: React.FC = () => {
                 <p className="text-body-md font-body-md opacity-80 mt-1">Serving daily haircut</p>
               </div>
               <img
-                src="/images/ref/fact-logo.png"
+                src="/images/fact-logo.png"
                 alt="Gentlemen's barber shop emblem"
                 className="w-28 h-28 object-contain"
               />
@@ -97,7 +97,7 @@ const FunFacts: React.FC = () => {
             <img
               className="w-full h-full object-cover"
               alt="An elderly master barber grooms a heavily tattooed client's beard in an atmospheric vintage shop."
-              src="/images/ref/fact-2.png"
+              src="/images/fact-2.png"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40" />
             <div className="absolute inset-0 p-8 flex flex-col justify-between">
@@ -105,8 +105,8 @@ const FunFacts: React.FC = () => {
                 Meet with Rewards
               </p>
               <div className="flex items-center gap-4">
-                <img src="/images/ref/award-1.png" alt="Award badge" className="h-10 w-auto object-contain" />
-                <img src="/images/ref/award-2.png" alt="Award badge" className="h-10 w-auto object-contain" />
+                <img src="/images/award-1.png" alt="Award badge" className="h-10 w-auto object-contain" />
+                <img src="/images/award-2.png" alt="Award badge" className="h-10 w-auto object-contain" />
               </div>
             </div>
           </motion.div>

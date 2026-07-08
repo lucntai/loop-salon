@@ -18,7 +18,7 @@ const Booking: React.FC = () => {
         <img
           className="w-full h-full object-cover object-center"
           alt="An extreme close-up of a barber applying rich shaving lather to a client's cheek with a badger brush during a classic wet shave."
-          src="/images/ref/hours-bg.png"
+          src="/images/hours-bg.png"
         />
       </div>
 

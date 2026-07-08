@@ -11,9 +11,9 @@ const fadeUpVariants = {
 };
 
 const avatars = [
-  '/images/ref/testi-av1.png',
-  '/images/ref/testi-av2.png',
-  '/images/ref/testi-av3.png',
+  '/images/testi-av1.png',
+  '/images/testi-av2.png',
+  '/images/testi-av3.png',
 ];
 
 const Testimonials: React.FC = () => {
@@ -56,7 +56,7 @@ const Testimonials: React.FC = () => {
               <img
                 className="w-full h-full object-cover"
                 alt="A young client admires his fresh cut and styled hair as the barber finishes with a blow-dryer in a brick-walled heritage barbershop."
-                src="/images/ref/testi-main.png"
+                src="/images/testi-main.png"
               />
             </div>
           </motion.div>
@@ -71,7 +71,7 @@ const Testimonials: React.FC = () => {
           >
             {/* Razor image overlapping top-right */}
             <img
-              src="/images/ref/testi-razor.png"
+              src="/images/testi-razor.png"
               alt="An open straight razor with a wooden handle and polished steel blade."
               className="hidden lg:block absolute -top-24 right-6 w-24 rotate-[35deg] pointer-events-none select-none drop-shadow-xl"
             />
@@ -100,7 +100,7 @@ const Testimonials: React.FC = () => {
 
             {/* Big quote watermark */}
             <img
-              src="/images/ref/testi-quote.png"
+              src="/images/testi-quote.png"
               alt=""
               aria-hidden="true"
               className="absolute right-10 top-1/3 w-40 opacity-[0.06] pointer-events-none select-none"
