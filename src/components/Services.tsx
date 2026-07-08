@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const services = [
-  { title: 'Blade & Brush', icon: '/images/svc-1.png', desc: 'Styles we craft looks that suit your personality and lifestyle.' },
-  { title: 'The Gents’ Den', icon: '/images/svc-2.png', desc: 'We design styles tailored to your personality and lifestyle.' },
-  { title: 'Fade Theory', icon: '/images/svc-3.png', desc: 'Crafting looks that reflect who you are and how you live.' },
-  { title: 'Snip Society', icon: '/images/svc-4.png', desc: 'Personalized styles created to match your unique lifestyle.' },
-  { title: 'Crafted Cuts', icon: '/images/svc-5.png', desc: 'Our styles complement your personality and everyday life.' },
-  { title: 'The Razor Room', icon: '/images/svc-6.png', desc: 'Tailoring looks that perfectly fit your individuality.' },
+  { title: 'Blade & Brush', icon: '/images/svc-1.png', price: '$49', desc: 'Styles we craft looks that suit your personality and lifestyle.' },
+  { title: 'The Gents’ Den', icon: '/images/svc-2.png', price: '$55', desc: 'We design styles tailored to your personality and lifestyle.' },
+  { title: 'Fade Theory', icon: '/images/svc-3.png', price: '$39', desc: 'Crafting looks that reflect who you are and how you live.' },
+  { title: 'Snip Society', icon: '/images/svc-4.png', price: '$45', desc: 'Personalized styles created to match your unique lifestyle.' },
+  { title: 'Crafted Cuts', icon: '/images/svc-5.png', price: '$60', desc: 'Our styles complement your personality and everyday life.' },
+  { title: 'The Razor Room', icon: '/images/svc-6.png', price: '$35', desc: 'Tailoring looks that perfectly fit your individuality.' },
 ];
 
 const fadeUpVariants = {
@@ -46,7 +46,7 @@ const Services: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
@@ -56,21 +56,40 @@ const Services: React.FC = () => {
             <motion.div
               key={service.title}
               variants={fadeUpVariants}
-              className="group relative flex flex-col bg-white p-10 min-h-[340px] hover:bg-ink-black transition-colors duration-500"
+              className="service-card-group group relative flex flex-col justify-between aspect-square bg-white p-10 hover:bg-ink-black transition-colors duration-500 overflow-hidden"
             >
-              <h3 className="text-headline-lg font-headline-lg uppercase group-hover:text-paper-bg transition-colors duration-300">
+              <h3 className="text-headline-lg font-headline-lg uppercase group-hover:text-paper-bg transition-colors duration-300 relative z-20">
                 {service.title}
               </h3>
-              <div className="flex-grow flex items-center justify-center py-8">
-                <img
-                  src={service.icon}
-                  alt={`${service.title} service icon`}
-                  className="w-24 h-24 object-contain"
-                />
-              </div>
-              <p className="text-body-md font-body-md text-on-surface-variant group-hover:text-surface-variant transition-colors duration-300 max-w-[16rem]">
+
+              {/* Icon — fades out on hover */}
+              <img
+                src={service.icon}
+                alt={`${service.title} service icon`}
+                className="service-icon w-20 h-20 object-contain transition-opacity duration-300 relative z-10 self-center"
+              />
+
+              <p className="text-body-md font-body-md text-on-surface-variant group-hover:text-surface-variant transition-colors duration-300 max-w-[16rem] relative z-20">
                 {service.desc}
               </p>
+
+              {/* Price marquee — full-bleed, fades in on hover, scrolls edge to edge */}
+              <div className="marquee-container absolute inset-0 flex items-center opacity-0 transition-opacity duration-500 pointer-events-none">
+                <div className="flex animate-marquee whitespace-nowrap">
+                  {Array.from({ length: 2 }).map((_, track) => (
+                    <div key={track} className="flex shrink-0" aria-hidden={track === 1}>
+                      {Array.from({ length: 6 }).map((_, i) => (
+                        <span
+                          key={i}
+                          className="text-[44px] leading-none font-display-lg text-brass-gold px-5"
+                        >
+                          {service.price}
+                        </span>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>

@@ -17,6 +17,11 @@
     .animate-marquee {
         animation: marquee 20s linear infinite;
     }
+
+    /* Faster loop for the price scroll inside service cards */
+    .service-card-group .animate-marquee {
+        animation-duration: 12s;
+    }
 }
 
 @keyframes marquee {
