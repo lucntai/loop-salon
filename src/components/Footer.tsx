@@ -64,12 +64,12 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-white/10 py-8 text-center">
+        {/* <div className="border-t border-white/10 py-8 text-center">
           <p className="text-body-md font-body-md text-white/50">
             Copyright and design by{' '}
-            <span className="text-brass-gold">@Mezario</span> 1990 - 2025
+            <span className="text-brass-gold">@Lucnt</span> 1990 - 2025
           </p>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
