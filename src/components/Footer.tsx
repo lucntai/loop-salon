@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/10 pt-10">
           <img
             src="/images/footer-wordmark.png"
-            alt="SALONO"
+            alt="LOOP SALON"
             className="w-full object-contain select-none pointer-events-none"
           />
         </div>

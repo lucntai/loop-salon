@@ -55,7 +55,7 @@ const Testimonials: React.FC = () => {
             <div className="w-full h-full min-h-[420px] overflow-hidden">
               <img
                 className="w-full h-full object-cover"
-                alt="A young client admires his fresh cut and styled hair as the barber finishes with a blow-dryer in a brick-walled heritage barbershop."
+                alt="A client admires their fresh cut and styled hair as the stylist finishes at Loop Salon."
                 src="/images/testi-main.png"
               />
             </div>
@@ -83,7 +83,7 @@ const Testimonials: React.FC = () => {
                   <img
                     key={i}
                     src={src}
-                    alt="Satisfied Salono client"
+                    alt="Satisfied Loop Salon client"
                     className="w-11 h-11 rounded-md object-cover border-2 border-white"
                   />
                 ))}

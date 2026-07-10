@@ -41,7 +41,7 @@ const Team: React.FC = () => {
         </div>
         <motion.a
           className="border border-brass-gold text-ink-black px-10 py-4 text-label-sm font-label-sm uppercase tracking-widest hover:bg-brass-gold hover:text-white transition-colors duration-300 whitespace-nowrap"
-          href="#"
+          href="#contact"
           variants={fadeUpVariants}
         >
           Join With Us
@@ -60,7 +60,7 @@ const Team: React.FC = () => {
             <div className="aspect-[4/5] overflow-hidden">
               <img
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                alt={`Portrait of ${member.name}, ${member.role} at Salono`}
+                alt={`Portrait of ${member.name}, ${member.role} at Loop Salon`}
                 src={member.img}
               />
             </div>

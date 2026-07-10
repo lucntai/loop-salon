@@ -12,12 +12,12 @@ const fadeUpVariants = {
 
 const Booking: React.FC = () => {
   return (
-    <section className="relative min-h-[640px] flex items-center overflow-hidden">
-      {/* Full-bleed background: shaving image */}
+    <section id="contact" className="relative min-h-[640px] flex items-center overflow-hidden">
+      {/* Full-bleed background image */}
       <div className="absolute inset-0 z-0">
         <img
           className="w-full h-full object-cover object-center"
-          alt="An extreme close-up of a barber applying rich shaving lather to a client's cheek with a badger brush during a classic wet shave."
+          alt="A close-up of a Loop Salon stylist applying a treatment during a service."
           src="/images/hours-bg.png"
         />
       </div>
@@ -60,17 +60,13 @@ const Booking: React.FC = () => {
           </motion.div>
 
           <motion.div className="space-y-4 mb-8" variants={fadeUpVariants}>
-            <a className="flex items-center gap-3 text-on-surface-variant hover:text-brass-gold transition-colors" href="tel:+384900292637">
+            <a className="flex items-center gap-3 text-on-surface-variant hover:text-brass-gold transition-colors" href="tel:+919909813221">
               <span className="material-symbols-outlined text-brass-gold text-[20px]">call</span>
-              +3849 0029 2637
+              +91 99098 13221
             </a>
             <div className="flex items-center gap-3 text-on-surface-variant">
-              <span className="material-symbols-outlined text-brass-gold text-[20px]">mail</span>
-              booking@example.com
-            </div>
-            <div className="flex items-center gap-3 text-on-surface-variant">
               <span className="material-symbols-outlined text-brass-gold text-[20px]">location_on</span>
-              758 5th Avenue, New York, NY 10057
+              GF-10, ABC Avan Business Park, beside Tea Post Cafe, near Radhe Fortune Complex, Bhat, Ahmedabad – 382428
             </div>
           </motion.div>
 

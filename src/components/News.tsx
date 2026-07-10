@@ -63,7 +63,7 @@ const News: React.FC = () => {
             <div className="aspect-[4/3] overflow-hidden group">
               <img
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                alt="A stylist works on a client's cropped platinum haircut in a bright, plant-filled modern salon."
+                alt="A stylist works on a client's fresh haircut in a bright, modern Loop Salon interior."
                 src="/images/news-feature.jpg"
               />
             </div>

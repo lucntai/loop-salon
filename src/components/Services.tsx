@@ -21,7 +21,7 @@ const fadeUpVariants = {
 
 const Services: React.FC = () => {
   return (
-    <section className="pb-section-gap bg-paper-bg px-margin-desktop">
+    <section id="services" className="pb-section-gap bg-paper-bg px-margin-desktop">
       <div className="max-w-container-max mx-auto">
         <motion.div
           className="text-center mb-16"

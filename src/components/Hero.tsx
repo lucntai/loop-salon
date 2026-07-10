@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
               <span className="inline-block align-middle w-28 h-14 rounded-full overflow-hidden shrink-0">
                 <img
                   className="w-full h-full object-cover"
-                  alt="A relaxed client reclining at the wash basin while a barber shampoos his hair, capturing the pampering, spa-like experience of the salon."
+                  alt="A relaxed client reclining at the wash basin while a stylist shampoos his hair, capturing the pampering, spa-like experience of the salon."
                   src="/images/hero-pill.png"
                 />
               </span>
@@ -82,8 +82,9 @@ const Hero: React.FC = () => {
             animate="visible"
             variants={fadeUpVariants}
           >
-            Whether you're here for a fresh fade or a full makeover, we’ve got you
-            covered, our team of expert stylists.
+            Ahmedabad's L'Oréal Professionnel VIP Salon — led by founder Dippak
+            Totlaanii, a former L'Oréal Professionnel Technical Executive, bringing
+            expert cuts, color, and hair care to Bhat.
           </motion.p>
           <motion.div
             className="mt-12"
@@ -100,7 +101,7 @@ const Hero: React.FC = () => {
           >
             <a
               className="inline-block border border-brass-gold text-white font-label-sm text-label-sm px-12 py-5 uppercase tracking-widest hover:bg-brass-gold hover:text-black transition-colors duration-500"
-              href="#"
+              href="#contact"
             >
               Book Appointment
             </a>

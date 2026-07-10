@@ -27,13 +27,13 @@ const marqueeLogos = [
 
 const About: React.FC = () => {
   const bullets = [
-    'Skilled & certified professionals',
-    'Clean, relaxing, and welcoming environment',
-    'Personalized grooming consultations',
+    "Founded by a former L'Oréal Professionnel Technical Executive",
+    "Official L'Oréal Professionnel VIP Salon partner",
+    'Personalized consultations for every color & cut',
   ];
 
   return (
-    <section className="py-section-gap bg-paper-bg overflow-hidden">
+    <section id="about" className="py-section-gap bg-paper-bg overflow-hidden">
       <div className="max-w-container-max mx-auto px-margin-desktop">
         {/* Heading */}
         <motion.div
@@ -44,13 +44,13 @@ const About: React.FC = () => {
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
         >
           <motion.div className="mb-6" variants={fadeUpVariants}>
-            <Eyebrow>About Salon</Eyebrow>
+            <Eyebrow>About Loop Salon</Eyebrow>
           </motion.div>
           <motion.h2
             className="text-headline-xl font-headline-xl uppercase max-w-2xl leading-tight"
             variants={fadeUpVariants}
           >
-            Your Trusted Salon &amp; Barber shop.
+            Bhat, Ahmedabad's L'Oréal Professionnel VIP Salon.
           </motion.h2>
         </motion.div>
 
@@ -66,7 +66,7 @@ const About: React.FC = () => {
             <div className="w-full aspect-[4/5] overflow-hidden">
               <img
                 className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
-                alt="A master barber gives a client a precise straight-razor beard shave in a warmly lit heritage barbershop, conveying skilled, hands-on craftsmanship."
+                alt="A skilled stylist gives a client a precise, hands-on grooming service in the warmly lit Loop Salon, conveying trusted craftsmanship."
                 src="/images/about-main.png"
               />
             </div>
@@ -85,18 +85,20 @@ const About: React.FC = () => {
             >
               <img
                 className="w-full h-full object-cover"
-                alt="A client seated in a barber chair draped with a cape while a stylist works, viewed across the salon's dark cabinetry and mirrors."
+                alt="A client seated in a salon chair draped with a cape while a stylist works, viewed across Loop Salon's dark cabinetry and mirrors."
                 src="/images/about-small.png"
               />
             </motion.div>
 
             <motion.div className="bg-white p-10 lg:p-12" variants={fadeUpVariants}>
               <h3 className="text-headline-lg font-headline-lg uppercase mb-4">
-                Why Choose Us?
+                Meet Dippak Totlaanii
               </h3>
               <p className="text-body-md font-body-md text-on-surface-variant mb-8 max-w-md">
-                From classic cuts to modern styles, we craft looks that suit your
-                personality and lifestyle.
+                Founder of Loop Salon — Hair Education, and former Technical
+                Executive at L'Oréal Professionnel and Technical Advisor at
+                Schwarzkopf Professional. That trained eye shapes every cut and
+                color that leaves our chair.
               </p>
               <ul className="space-y-5 mb-10">
                 {bullets.map((b) => (
@@ -117,7 +119,7 @@ const About: React.FC = () => {
               </ul>
               <a
                 className="block w-full text-center border border-brass-gold text-ink-black font-label-sm text-label-sm px-8 py-4 uppercase tracking-widest hover:bg-brass-gold hover:text-white transition-colors duration-300"
-                href="#"
+                href="#services"
               >
                 Our Expertise
               </a>
@@ -132,7 +134,7 @@ const About: React.FC = () => {
           {[...marqueeLogos, ...marqueeLogos, ...marqueeLogos].map((src, i) => (
             <img
               key={i}
-              alt="Partner brand logo"
+              alt="L'Oréal Professionnel partner product line logo"
               className="h-8 w-auto opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all shrink-0"
               src={src}
             />
