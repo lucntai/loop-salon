@@ -34,7 +34,7 @@ const About: React.FC = () => {
 
   return (
     <section id="about" className="py-section-gap bg-paper-bg overflow-hidden">
-      <div className="max-w-container-max mx-auto px-margin-desktop">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         {/* Heading */}
         <motion.div
           className="mb-16"
@@ -47,7 +47,7 @@ const About: React.FC = () => {
             <Eyebrow>About Loop Salon</Eyebrow>
           </motion.div>
           <motion.h2
-            className="text-headline-xl font-headline-xl uppercase max-w-2xl leading-tight"
+            className="text-headline-xl-mobile font-headline-xl-mobile md:text-headline-xl md:font-headline-xl uppercase max-w-2xl leading-tight"
             variants={fadeUpVariants}
           >
             Bhat, Ahmedabad's L'Oréal Professionnel VIP Salon.
